@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20</title>
+</head>
+<body>
+    Informe quantos depósitos você fez no banco:
+    <input type="number" id="qtd_depositos">
+    Informe o valor de cada depósito:
+    <input type="number" id="input_valor">
+
+    <button onclick="acompanhar()">Acompanhar a grana</button><br>
+
+    <span id="resultado"></span>
+</body>
+</html>
+<script>
+    function acompanhar() {
+        var qtd = Number(qtd_depositos.value);
+        var valor =  Number(input_valor.value);
+        var repeticao = 1;
+        
+
+        while(repeticao <= qtd){
+            var conta = repeticao * valor
+            
+            resultado.innerHTML += `${repeticao}ºmês: ${conta}<br>`
+            repeticao += 1;
+        }
+        resultado.innerHTML += `Total guardado: ${conta}`
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qtd fatias de pizza:
+    <input type="number" id="qtd_pizza">
+    <button onclick="comer()">Comer tudo!</button><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function comer() {
+        var qtd = Number(qtd_pizza.value);
+        var repeticao = 1;
+        resultado.innerHTML = ""
+
+        while(repeticao <= qtd) {
+            resultado.innerHTML += `Comeu a ${repeticao}º fatia!<br>`
+            repeticao += 1;
+        }
+    }
+</script>

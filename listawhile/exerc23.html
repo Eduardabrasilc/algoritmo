@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisibilidade</title>
+</head>
+<body>
+    <h1>Verificação de Divisibilidade</h1>
+    <p>Informe os limites da amostragem e o número para testar a divisibilidade.</p>
+    
+    <label for="limite_inferior">Limite Inferior (maior que 1):</label>
+    <input type="number" id="limite_inferior">
+    <br>
+
+    <label for="limite_superior">Limite Superior (entre limite inferior e 100):</label>
+    <input type="number" id="limite_superior">
+    <br>
+
+    <label for="numero_divisibilidade">Número para Testar a Divisibilidade (entre 3 e 10):</label>
+    <input type="number" id="numero_divisibilidade">
+    <br>
+
+    <button onclick="contarDivisiveis()">Contar</button>
+    
+    <h2>Números Divisíveis:</h2>
+    <p id="numeros_divisiveis"></p>
+
+    <h2>Estatísticas:</h2>
+    <p id="estatisticas"></p>
+
+    <script>
+        function contarDivisiveis() {
+            var limiteInferior = Number(limite_inferior.value);
+            var limiteSuperior = Number(limite_superior.value);
+            var numeroDivisibilidade = Number(numero_divisibilidade.value);
+            var numerosDivisiveis = [];
+
+            if (limiteInferior <= 1) {
+                alert("O limite inferior deve ser maior que 1.");
+                return;
+            }
+
+            if (limiteSuperior <= limiteInferior || limiteSuperior >= 100) {
+                alert("O limite superior deve estar entre o limite inferior e 100.");
+                return;
+            }
+
+            if (numeroDivisibilidade < 3 || numeroDivisibilidade > 10) {
+                alert("O número para testar a divisibilidade deve estar entre 3 e 10.");
+                return;
+            }
+
+            var i = limiteInferior;
+            while (i <= limiteSuperior) {
+                if (i % numeroDivisibilidade === 0) {
+                    numerosDivisiveis.push(i);
+                }
+                i++;
+            }
+
+            var numerosDivisiveisStr = numerosDivisiveis.join(", ");
+            document.getElementById("numeros_divisiveis").textContent = numerosDivisiveisStr;
+
+            var totalNumerosExibidos = numerosDivisiveis.length;
+            var somatorio = numerosDivisiveis.reduce(function(a, b) { return a + b; }, 0);
+            var media = somatorio / totalNumerosExibidos;
+            var maiorNumero = Math.max.apply(null, numerosDivisiveis);
+            var menorNumero = Math.min.apply(null, numerosDivisiveis);
+
+            var estatisticas = "QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: " + totalNumerosExibidos + "\nSOMATÓRIO DOS NÚMEROS EXIBIDOS: " + somatorio + "\nMÉDIA DOS NÚMEROS EXIBIDOS: " + media.toFixed(2) + "\nMAIOR NÚMERO EXIBIDO: " + maiorNumero + "\nMENOR NÚMERO EXIBIDO: " + menorNumero;
+            document.getElementById("estatisticas").textContent = estatisticas;
+        }
+    </script>
+</body>
+</html>

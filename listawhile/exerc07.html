@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+    Informe um numero entre 20 e 100:
+    <input type="number" id="input_numero">
+
+    <button onclick="multiplos()">Adoro múltiplos de 5</button><br>
+    <span id="frase"></span>
+</body>
+</html>
+<script>
+    function multiplos() {
+        var repeticao = 0;
+        var numero = Number(input_numero.value)
+
+        while (repeticao <= numero) {
+            frase.innerHTML += repeticao + `<br>`
+            repeticao += 5;
+        }
+    }
+</script>

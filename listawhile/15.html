@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 15</title>
+</head>
+<body>
+    Insira a quantidade de elefantes:
+    <input id="input_elefantes"> <br><br>
+    <button onclick="elefantes()">
+        Atazanar a médium
+    </button>
+    <div id="div_elefante"></div>
+</body>
+</html>
+<script>
+    function elefantes(){
+        var quantidade_elefantes = Number(input_elefantes.value);
+        var numero = 2;
+        // var numero_elefantes = 1;
+        var texto = "incomodam, incomodam,";
+
+        div_elefante.innerHTML = "";
+
+
+        if (quantidade_elefantes == 1){
+            div_elefante.innerHTML += "1 elefante incomoda muita gente";
+        
+        }else{
+            
+            while (numero <= quantidade_elefantes){
+
+                div_elefante.innerHTML += `1 elefante incomoda muita gente <br>`;
+                div_elefante.innerHTML += `${numero} elefantes ${texto} muito mais <br>`;
+
+                numero += 1;
+                texto += " incomodam,";
+            }
+        }
+    }
+
+
+
+// if((numero % 2) != 0){
+//     div_elefante.innerHTML += `
+//     1 elefante incomoda muita gente <br>
+//     `;
+//     numero_elefantes += 1;
+//     texto += " incomodam";
+
+
+// }else{
+//     div_elefante.innerHTML += `
+//     ${numero_elefantes} elefantes ${texto} muito mais <br>
+//     `;
+// }
+</script>
+
+

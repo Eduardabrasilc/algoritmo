@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 23</title>
+</head>
+<body>
+    Insira o valor inicial da amostragem:
+    <input id="input_minimo"> <br><br>
+    Insira o valor máximo da amostragem:
+    <input id="input_maximo"> <br><br>
+    Insira o número para testar a divisibilidade:
+    <input id="input_numero">
+    <button onclick="contar()">
+        Contar
+    </button>
+    <div id="div_contar"></div>
+</body>
+</html>
+<script>
+    function contar(){
+        var minimo = Number(input_minimo.value);
+        var maximo = Number(input_maximo.value);
+        var numero = Number(input_numero.value);
+        var contador = 3;
+        var virg = '';
+
+        var total_numero_exibidos = 0;
+        var somatorio_numero_exibidos = 0;
+        var media_numero_exibidos = 0;
+        var maior_numero_exibido = 0;
+        var menor_numero_exibido = 0;
+        var minimo_anterior = 100;
+
+        div_contar.innerHTML = ``;        
+
+        if (minimo > 1){
+            if ((maximo > minimo) && (maximo < 100)){
+                if ((numero >= 3) && (numero <= 10)){
+                    
+                    while(minimo <= maximo){
+            
+                        if ((minimo % numero) == 0){
+                            div_contar.innerHTML += `
+                                ${minimo},
+                            `;
+
+                            total_numero_exibidos += 1;
+                            somatorio_numero_exibidos += minimo;
+                            maior_numero_exibido = minimo;
+
+                            // if (minimo_anterior > minimo){
+                            //     menor_numero_exibido = minimo;
+                            // }
+                            // minimo_anterior = 0;
+                        }
+
+                        minimo += 1;
+
+                        menor_numero_exibido = maior_numero_exibido - ((total_numero_exibidos - 1) * numero);
+                        media_numero_exibidos = somatorio_numero_exibidos/total_numero_exibidos;
+                    }
+                    div_contar.innerHTML += `
+                        <br>
+                        QUANTIDADE TOTAL DE NUMERO EXIBIDOS: ${total_numero_exibidos}<br>
+                        SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${somatorio_numero_exibidos}<br>
+                        MÉDIA DOS NÚMEROS EXIBIDOS: ${media_numero_exibidos}<br>
+                        MAIOR NÚMERO EXIBIDO: ${maior_numero_exibido}<br>
+                        MENOR NÚMERO EXIBIDO: ${menor_numero_exibido}
+                    `;
+
+                }else{
+                    alert(`Insira um numero para testar divisibilidade entre 3 e 10`);
+                }
+            }else{
+                alert(`Insira um numero maximo do intervalo maior que o mínimo e menor que 100`);
+            }
+        }else{
+            alert(`Insira um numero mínimo do intervalo maior que 1`);
+        }
+
+
+    }
+</script>

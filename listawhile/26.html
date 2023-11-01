@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 26</title>
+</head>
+<body>
+    Insira um número entre 10 e 500:
+    <input id="input_numero">
+
+    <button onclick="pares()">
+        Somar Pares
+    </button>
+    
+    <div id="div_pares"></div>
+</body>
+</html>
+
+<script>
+    function pares(){
+        var numero_usuario = Number(input_numero.value);
+        var contador = 1;
+        var pares = 0;
+        
+        div_pares.innerHTML = ``;
+        
+        if(numero_usuario >= 10 && numero_usuario <= 500 ){
+            while (contador <= numero_usuario){
+
+                if ((contador % 2) == 0){
+                    div_pares.innerHTML += `${contador} <br>`;
+
+                    pares += contador;
+                }
+
+                contador += 1;
+            }
+
+            div_pares.innerHTML += `Soma dos pares: ${pares}`;
+        }else{
+            alert(`Insira um número entre 10 e 500!`);
+        }
+    }
+</script>

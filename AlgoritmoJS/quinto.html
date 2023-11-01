@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    
+    Informe sua idade:
+    <input type="text" id="idade">
+
+    <button onclick="aposentadoriahomem()"> aposentadoria homem</button>
+    <button onclick="aposentadoriamulher()"> aposentadoria mulher </button>
+</body>
+</html>
+
+<script>
+function aposentadoriahomem() {
+var idadetotal = idade.value;
+var tempofalta = 70 - idadetotal;
+
+alert(`Falta ${tempofalta} anos para se aposentar`)
+}
+
+function aposentadoriamulher() {
+
+    var idadetotal = idade.value;
+    var tempofalta = 60 - idadetotal;
+
+    alert(`Falta ${tempofalta} anos para se aposentar`)
+}
+
+</script>

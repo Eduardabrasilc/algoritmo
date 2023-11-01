@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1'</title>
+</head>
+<body>
+    <h1> Introdução a JS</h1>
+    Digite sua cidade natal:
+    <input type="text" id="input_primeiro">
+    Informe sua data de nascimento:
+    <input name="dtNascimento" type=date id="input_segundo">
+    <br>
+
+    <button onclick="cadastrar()">
+        cadastrar
+        </button>
+</body>
+</html>
+
+<script>
+
+function cadastrar() {
+
+var cidadenatal = input_primeiro.value;
+var dtnascimento = input_segundo.value;
+
+alert (`Você nasceu na Cidade de ${cidadenatal} em ${dtnascimento} `)
+
+}
+</script>

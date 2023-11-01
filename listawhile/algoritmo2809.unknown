@@ -1,0 +1,45 @@
+<script>
+  function analisarTextos() {
+    var frase = input_frase.value;
+    span_qtd_letras.innerHTML = frase.length;
+    if (frase.startsWith("a") == false){
+      span_comeca_a.innerHTML = "Não"
+    }else{
+      span_comeca_a.innerHTML = "Sim"
+    }
+    if(frase.startsWith("e")== false){
+      span_comeca_e.innerHTML = "Não"
+    }else{
+      span_comeca_e.innerHTML = "Sim"
+    }
+    if(frase.endsWith(".com")== true){
+      span_termina_com.innerHTML = "Sim"
+    }else{
+      span_termina_com.innerHTML = "Não"
+    }
+    if(frase.endsWith("e")== true){
+      span_termina_e.innerHTML = "Sim"
+    }else{
+      span_termina_e.innerHTML = "Não"
+    }
+    if(frase.endsWith("@")== true){
+      span_termina_arroba.innerHTML = "Sim"
+    }else{
+      span_termina_arroba.innerHTML = "Não"
+    }
+    span_primeira_letra.innerHTML = frase[0];
+    span_terceira_letra.innerHTML = frase[2];
+    span_ultima_letra.innerHTML = frase[frase.length -1];
+    span_primeira_arroba.innerHTML = frase.indexOf("@")
+    span_indice_abc.innerHTML = frase.indexOf("abc")
+    span_maiusculo.innerHTML = frase = frase.toUpperCase()
+    span_minusculo.innerHTML = frase = frase.toLowerCase()
+    span_frase_original.innerHTML = input_frase.value;
+    span_arroba_no_a.innerHTML = frase.replace('a',"@")
+    span_sem_espacos.innerHTML = frase.replaceAll(" ","")
+    span_numeros.innerHTML =   frase.replaceAll("a","4")
+                                    .replaceAll("s","5")  
+                                    .replaceAll("e","3")
+}
+</script>
+// da uma olhada pra ver se ta certo pq eu não revisei

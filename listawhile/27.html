@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 26</title>
+</head>
+<body>
+    Insira um número positivo como limite da contagem:
+    <input id="input_limite"><br><br>
+    Insira um número para testes de divisibilidade entre 1 e o numero limite:
+    <input id="input_divisor">
+
+    <button onclick="soma()">
+        Somar Números
+    </button>
+    
+    <div id="div_soma"></div>
+</body>
+</html>
+
+<script>
+    function soma(){
+        var limite = Number(input_limite.value);
+        var divisor = Number(input_divisor.value);
+        var contador = 1;
+        var soma = 0;
+        
+        div_soma.innerHTML = ``;
+        
+        if(limite > 0 && divisor >= 1 && divisor <= limite ){
+            while (contador <= limite){
+
+                if ((contador % divisor) == 0){
+                    div_soma.innerHTML += `${contador} <br>`;
+
+                    soma += contador;
+                }
+
+                contador += 1;
+            }
+
+            div_soma.innerHTML += `Soma dos números: ${soma}`;
+        }else{
+            alert(`Insira números válidos`);
+        }
+    }
+</script>

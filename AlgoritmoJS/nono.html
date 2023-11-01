@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    Informe seu nome:
+    <input type="text" id="nomedoaluno"> <br>
+    Informe sua nota na continuada:
+    <input type="text" id="notacontinuada"> <br>
+    Informe sua nota semestral:
+    <input type="text" id="notasemestral">  <br>
+    
+    <button onclick="media()"> Média</button>
+</body>
+<script>
+function media() {
+
+    var nome = nomedoaluno.value
+    var notac = Number(notacontinuada.value)
+    var notas = Number(notasemestral.value)
+    var média = (notac * 0.40) + (notas * 0.60)
+
+    alert(`A média de ${nome} será de ${média}`)
+
+}
+
+</script>
+
+</html>

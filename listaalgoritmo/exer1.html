@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+
+    Quantas latinhas de refrigerante toma por dia:
+    <input type="text" id="quantidade">
+    
+    <button onclick="quantos()"> Quantos refris? </button>
+    <div id="qtdrefri"></div>
+</body>
+
+<script>
+function quantos() {
+
+var latinhas = Number(quantidade.value);
+var resultado = latinhas * 365;
+
+qtdrefri.innerHTML = `Você toma ${resultado} por ano`
+if (resultado >=500){qtdrefri.innerHTML += `<br> Cuidado com a diabetes!!`}
+
+
+}
+
+</script>
+</html>

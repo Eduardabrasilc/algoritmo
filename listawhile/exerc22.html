@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 22</title>
+    <style>
+        .bonus-star {
+            width: 10px; /* Largura da estrela */
+            height: 10px; /* Altura da estrela */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    Informe quantos depósitos você fez no banco:
+    <input type="number" id="qtd_depositos">
+    Informe o valor de cada depósito:
+    <input type="number" id="input_valor">
+
+    <button onclick="acompanhar()">Acompanhar a grana</button><br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function acompanhar() {
+        var qtd = Number(qtd_depositos.value);
+        var valor = Number(input_valor.value);
+        var repeticao = 1;
+        var conta = 0;
+        var resultadoDiv = resultado;
+        resultado.innerHTML = ""
+
+        while (repeticao <= qtd) {
+            conta += valor;
+            var bonus = 0;
+
+            if (repeticao % 3 == 0) {
+                bonus = conta * 0.01; // 1% de bônus
+                conta += bonus;
+            }
+
+            var texto = `${repeticao}º mês: R$${conta}`;
+
+            if (bonus > 0) {
+                // Se houver bônus, é adicionado uma estrela à direita do valor acumulado
+                texto += `<img src="https://th.bing.com/th/id/OIP.dd-93OfVm0TaZECcDstrIAHaHK?pid=ImgDet&w=1920&h=1856&rs=1" alt="Star" class="bonus-star">`;
+            }
+
+            resultadoDiv.innerHTML += texto + "<br>";
+
+            repeticao += 1;
+        }
+
+        resultadoDiv.innerHTML += `Total guardado: R$${conta}`;
+    }
+</script>
+</html>
+
+</script>
+</html>

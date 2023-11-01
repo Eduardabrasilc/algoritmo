@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    Informe a pessoa que você mais ama na vida:
+    <input id="input_pessoa">
+    Informe o quanto você a ama:
+    <input type="number" id="qtd_amor">
+
+    <button onclick="expressar()">Expressar amor</button><br>
+    <div id="frase"></div>
+</body>
+</html>
+<script>
+    function expressar() {
+        var repeticao = 1;
+        var pessoa = input_pessoa.value;
+        var amor = Number(qtd_amor.value);
+
+        while(repeticao <= amor) {
+            frase.innerHTML += `${repeticao}-${pessoa}, eu te amo!<br>`
+            repeticao += 1;
+        }
+    }
+</script>

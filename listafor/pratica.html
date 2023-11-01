@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratica</title>
+</head>
+
+<body>
+    <h1>Quiosque Mirosmar</h1>
+    <h3>--------------Abertura do quisoque---------------</h3>
+    Quantidade de água engarrafada:
+    <input id="qtd_agua"><br>
+    Quantidade de coco fechado:
+    <input id="qtd_coco"><br>
+   
+    <button onclick="abrir()">Abrir o quiosque</button>
+
+    <h3>--------------------Estoque Inicial---------------------</h3>
+
+    <div id="resultado"></div>
+
+    <h3>-------------------Registro das operações de vendas-------------------------</h3>
+
+    Quantidade vendida:
+    <input id="qtd_vendida">
+    Produto vendido:
+    <select name="Produto" id="nome_produto">
+        <option value="cocoFechado">Coco Fechado</option>
+        <option value="garrafa">Agua engarrafada</option>
+    </select> 
+    <button onclick="registrar()">Registrar a venda</button>
+    <button id="botao" onclick="encerrarTurno()">Encerrar turno</button>
+    <style>
+        #botao {
+            background-color: red;
+        }
+    </style>
+    
+</body>
+
+</html>
+<script>
+    function abrir() {
+        var garrafasAgua = Number(qtd_agua.value);
+        var cocos = Number(qtd_coco.value);
+        resultado.innerHTML = ""
+        var qtdVendida = Number(qtd_vendida.value);
+        var produtoVendido = nome_produto.value;
+        
+        if (garrafasAgua < 100) {
+            alert(`Com essa quantidade de Água engarrafada não dá para abrir o quiosque`)
+        }
+        if (garrafasAgua >= 100 && garrafasAgua <= 1000) {
+            alert(`Engarrafe mais água de coco`)
+        }
+        if (cocos < 200) {
+            alert(`Com essa quantidade de Coco fechado não dá para abrir o quiosque`)
+        }
+        if (cocos >= 200 && cocos <= 2000) {
+            alert(`Compre mais cocos`)
+        }
+        else {
+            for(repeticao= 0; qtdVendida <= produtoVendido; repeticao += 1) {
+                var conta = qtdVendida - produtoVendido;
+                
+                resultado.innerHTML += `Com a venda de ${qtdVendida} de ${produtoVendido} o saldo no estoque é de ZZZZ`
+            }
+        }
+        resultado.innerHTML += `Água engarrafada: ${garrafasAgua}<br> Coco fechado: ${cocos} `
+
+   
+
+    }
+</script>

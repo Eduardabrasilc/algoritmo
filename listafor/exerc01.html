@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+
+<body>
+    Nome da fruta:
+    <input id="input_nomefruta">
+
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="frase"></div>
+</body>
+
+</html>
+<script>
+    var listaFrutas = [];
+    function pesquisar() {
+        
+        var fruta = input_nomefruta.value;
+        listaFrutas.push(fruta);
+        frase.innerHTML = "";
+
+
+        for (var posicao = 0;
+            posicao <= listaFrutas.length; posicao += 1) {
+            if (fruta == 'Maçã' || fruta == 'Uva' || fruta == 'Abacaxi') {
+                frase.innerHTML += `A fruta ${listaFrutas} existe na lista <br>`;
+            } else {
+                frase.innerHTML += `Não existe a ${fruta} na lista!<br>`;
+            } 
+            break
+
+        }
+
+        // // var frutaExiste = false;
+        // // for (var posicao = 0; < listaFrutas.length; posicao += 1) {
+        // //     if ((lista[posicao]) == fruta.toLowerCase()){
+        // //         posicaofrutaExistente = true;
+        //             break
+        // //     }
+        // }
+        
+
+    }
+
+
+</script>

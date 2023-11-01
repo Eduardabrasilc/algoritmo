@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da pizza:
+    <input type="text" id="dinheiro"> <br>
+    Quantidade de amigos:
+    <input type="text" id="qtdamigos">
+
+    <button onclick="rolapizza()"> Rola a pizza?</button>
+
+    <span id="valor_inteira"> </span>
+</body>
+
+<script>
+function rolapizza() {
+
+var valorinteira = Number(dinheiro.value);
+var qtdfriends = Number(qtdamigos.value);
+var valorporamigo = valorinteira / qtdfriends;
+
+valor_inteira.innerHTML = `Cada amigo vai pagar R$${valorporamigo} pela pizza`;
+if (valorporamigo >20){
+    valor_inteira.innerHTML += `<br> Deu ruim! Pizza muito cara!`
+}
+
+}
+
+</script>
+</html>

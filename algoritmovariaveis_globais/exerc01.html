@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+
+    <img id="imagem" src="https://i.pinimg.com/originals/bf/39/80/bf3980a9268de0b501ed9895d860ada7.jpg" width="20%" height="20%"> <br>
+
+    <button onclick="aumentar()">Aumentar a largura</button> 
+    <button onclick="reduzir()">Reduzir a largura</button>
+
+</body>
+</html>
+<script>
+   
+  var tamanho = 100;
+ 
+function aumentar(){
+    tamanho = tamanho + 10;
+    imagem.style.width = tamanho + "px"; 
+}
+function reduzir(){
+    tamanho = tamanho - 10;
+    imagem.style.width = tamanho + "px";
+    
+}
+    
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+
+    Informe o valor da passagem:
+    <input type="text" id="input_passagens" placeholder="4.40">
+    Quantas viagens fará por mês:
+    <input type="text" id="input_viagens">
+
+    <button onclick="vereconomia()"> Ver economia </button>
+    
+</body>
+
+<script>
+function vereconomia() {
+
+    var passagens = Number(input_passagens.value)
+    var viagens = Number(input_viagens.value)
+    var economia = Number(input_passagens.value) / 2 * Number(input_viagens.value)
+
+    alert(`Você economizará R$ ${economia} por mês`)
+
+}
+
+
+</script>
+</html>

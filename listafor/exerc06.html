@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+
+<body>
+    Informe o nome dos filmes que mais gosta:
+    <input id="input_filmesPref">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="frase"></div>
+</body>
+
+</html>
+<script>
+    var listaFilmes = [];
+    function cadastrar() {
+        var filmePreferido = input_filmesPref.value;
+        listaFilmes.push(filmePreferido);
+        frase.innerHTML = "";
+
+
+       for(var posicao = 0;
+        posicao < listaFilmes.length; posicao += 1) {
+            {
+                frase.innerHTML += `${(posicao + 1 )} - ${listaFilmes[posicao]}<br>`;
+
+            }
+
+        }
+    }
+</script>
