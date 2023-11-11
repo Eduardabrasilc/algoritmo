@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Indique o resultado:
+    <select name="" id="select_resultado">
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select>
+    <button onclick="registrar()">Registrar Jogo</button>
+    <br>
+   Qual jogo quer saber o resultado:<input type="text" id="jogo_input" onkeyup="exibirResultado()">
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    resultados = [];
+    Vitorias = 0;
+    Derrotas = 0;
+    Empates = 0;
+    function registrar() {
+        var resultado = select_resultado.value;
+        resultados.push(resultado);
+
+        if (resultado == 'vitoria') {
+            Vitorias += 1;
+        } else if (resultado == 'empate') {
+            Empates += 1;
+        } else {
+            Derrotas += 1;
+        };
+
+        var pontosPossiveis = (Vitorias + Derrotas + Empates) * 3
+        var pontuacaoTotal = (Vitorias * 3) + Empates
+        div_resultado.innerHTML = `
+        O time teve: ${Vitorias} vitórias, ${Empates} empates, ${Derrotas} derrotas 
+        <br>
+        Pontuação total: ${pontuacaoTotal} pontos 
+        <br>
+        Aproveitamento: ${pontuacaoTotal * 100 / pontosPossiveis}%
+        `
+    };
+
+    function exibirResultado() {
+        var jogo = Number(jogo_input.value);
+        if (jogo <= resultados.length) {
+            if (jogo > 0) {
+                if (resultados[jogo - 1] == 'vitoria') {
+                    var resultadoJogo = 'ganhou';
+                } else if (resultados[jogo - 1] == 'empate') {
+                    var resultadojogo = 'empatou';
+                } else {
+                    var resultadoJogo = 'perdeu';
+                };
+                div_resultado.innerHTML += ` 
+                <br>No ${jogo}º jogo, o time ${resultadoJogo}.
+                `;
+            };
+
+        } else {
+            div_resultado.innerHTML += `
+            <br>O ${jogo}º jogo ainda não foi cadastrado
+            `;
+        };
+    };
+</script>
